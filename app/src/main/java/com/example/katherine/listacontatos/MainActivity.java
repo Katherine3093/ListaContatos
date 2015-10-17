@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +29,19 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
+        List<Contacto> contactos=new ArrayList<>();
+        contactos.add(new Contacto("Jose","301576889","http://www.deculture.es/wp-content/uploads/2011/03/Deculture-Ghibli-Twitter-Avatar-11-e1315619036589.png"));
+        contactos.add(new Contacto("Maria","30078559",""));
+        contactos.add(new Contacto("Jesus","30178900","http://www.deculture.es/wp-content/uploads/2011/03/Deculture-Ghibli-Twitter-Avatar-11-e1315619036589.png"));
+        contactos.add(new Contacto("Melchor","30167890","http://www.deculture.es/wp-content/uploads/2011/03/Deculture-Ghibli-Twitter-Avatar-11-e1315619036589.png"));
+        contactos.add(new Contacto("Anastasio","3038766",""));
+        contactos.add(new Contacto("Euripides","30567654","http://www.deculture.es/wp-content/uploads/2011/03/Deculture-Ghibli-Twitter-Avatar-11-e1315619036589.png"));
+        contactos.add(new Contacto("Juan","3034556",""));
+        contactos.add(new Contacto("Nemesio","3055654",""));
+        contactos.add(new Contacto("Felipe","30256667",""));
+        contactos.add(new Contacto("Alex","3014665",""));
+        contactos.add(new Contacto("Cristian","3059965","http://www.deculture.es/wp-content/uploads/2011/03/Deculture-Ghibli-Twitter-Avatar-11-e1315619036589.png"));
+        contactos.add(new Contacto("Patrick","30599543",""));
     }
 
 
