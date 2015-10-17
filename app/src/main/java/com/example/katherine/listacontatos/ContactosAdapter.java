@@ -48,4 +48,10 @@ public class ContactosAdapter extends RecyclerView.Adapter<ContactosViewHolder>{
     public int getItemCount() {
         return contactos.size();
     }
+
+    public void update(List<Contacto> contactoCopia) {
+        contactos.clear();
+        contactos.addAll(contactoCopia);
+        notifyDataSetChanged();
+    }
 }

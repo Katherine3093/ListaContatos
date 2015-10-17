@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText buscadorEditText;
     private TextView resultadoTextView;
     private List<Contacto> contactos;
+    private ContactosAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         contactos.add(new Contacto("Cristian", "3059965", "http://www.deculture.es/wp-content/uploads/2011/03/Deculture-Ghibli-Twitter-Avatar-11-e1315619036589.png"));
         contactos.add(new Contacto("Patrick", "30599543", "http://www.deculture.es/wp-content/uploads/2011/03/Deculture-Ghibli-Twitter-Avatar-03-e1315619172826.png"));
 
-        ContactosAdapter adapter = new ContactosAdapter(this, contactos);
+        adapter = new ContactosAdapter(this, contactos);
         recyclerView.setAdapter(adapter);
 
 
@@ -68,19 +69,16 @@ public class MainActivity extends AppCompatActivity {
                                                     public void onTextChanged(CharSequence s, int start, int before, int count) {
                                                         String nombre = buscadorEditText.getText().toString();
 
+                                                        List<Contacto> contactoCopia = new ArrayList<Contacto>();
 
                                                         for (int i = 0; i < contactos.size(); i++) {
-                                                            if (contactos.get(i).getNombre().equals(nombre)) {
-
-                                                                resultadoTextView.setText("Encontrado!");
-
-                                                                break;
-                                                            } else {
-                                                                resultadoTextView.setText("suerte es que le digo");
-
-
+                                                            if (contactos.get(i).getNombre().toLowerCase().contains(nombre.toLowerCase())) {
+                                                                contactoCopia.add(contactos.get(i));
                                                             }
                                                         }
+
+                                                        adapter.update(contactoCopia);
+
                                                     }
 
                                                     public void afterTextChanged(Editable s) {
