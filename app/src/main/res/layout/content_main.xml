@@ -24,7 +24,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
-        android:layout_above="@+id/resultado"></android.support.v7.widget.RecyclerView>
+        android:layout_above="@+id/resultado"
+        android:layout_below="@+id/buscador"
+        ></android.support.v7.widget.RecyclerView>
 
 
     <TextView
